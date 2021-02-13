@@ -1,6 +1,4 @@
-using System;
-
-namespace MovieWeb.Models
+namespace MovieWeb.ClientApp.Models
 {
     public class ErrorViewModel
     {

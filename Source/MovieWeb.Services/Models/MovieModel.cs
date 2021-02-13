@@ -1,15 +1,10 @@
-﻿using AutoMapper.Configuration.Annotations;
-using MovieWeb.Services.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
-namespace MovieWeb.Models
+namespace MovieWeb.Services.Models
 {
-    public class MovieViewModel
+    public class MovieModel
     {
-        public MovieViewModel()
+        public MovieModel()
         {
             this.Image = new Image();
         }
@@ -22,9 +17,10 @@ namespace MovieWeb.Models
 
         public string ProgramType { get; set; }
 
+        [JsonPropertyName("Images")]
         public Image Image { get; set; }
 
-        public string ReleaseYear { get; set; }
+        public int ReleaseYear { get; set; }
     }
 
     public class Image
@@ -34,6 +30,7 @@ namespace MovieWeb.Models
             this.PosterArt = new PosterArt();
         }
 
+        [JsonPropertyName("Poster Art")]
         public PosterArt PosterArt { get; set; }
     }
 

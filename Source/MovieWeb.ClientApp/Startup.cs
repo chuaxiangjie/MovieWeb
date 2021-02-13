@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MovieWeb.Models;
+using MovieWeb.ClientApp.Models;
 using MovieWeb.Services;
 using MovieWeb.Services.Models;
 
-namespace MovieWeb
+namespace MovieWeb.ClientApp
 {
     public class Startup
     {

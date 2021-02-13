@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MovieWeb.Models;
+using MovieWeb.ClientApp.Models;
 using MovieWeb.Services;
 using MovieWeb.Services.Models;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace MovieWeb.Controllers
+namespace MovieWeb.ClientApp.Controllers
 {
     public class HomeController : Controller
     {
