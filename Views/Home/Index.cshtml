@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IList<MovieViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to iMovie</h1>
+</div>
+
+
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"> </span>
+    <input type="text" id="search-box" class="form-control" placeholder="Search">
+</div>
+
+
+<div id="movie-list" class="row">
+
+
+</div>
+
+@section Scripts {
+
+    <script src="~/js/MovieLibrary.js"></script>
+
+    <script>
+
+          $('#search-box').on('keyup', function (e) {
+
+                if (e.which !== 32) {
+                    var searchTitle = $(this).val();
+                    if (searchTitle.length >= 3) {
+                        // Call API
+                        console.log("call api");
+
+                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchTitle: searchTitle, resetIndex: true});
+
+                    } else if (searchTitle.length == 0) {
+                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchTitle: '', resetIndex: true});
+                    }
+                }
+            });
+
+        var movieLibrary = new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchString: "3" });
+
+    </script>
+
+}
+
+
+
