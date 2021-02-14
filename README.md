@@ -39,10 +39,13 @@ What things you need to install the software and how to install them
 <img src="https://user-images.githubusercontent.com/5947398/107878836-1bb5ef00-6f10-11eb-850e-539f29f28098.png" width="600" />
 
 
+## Features
 
-
+* Movie search
+* Inifinite Scroll
 
 ## Built With
 
 * [.NET 5](https://dotnet.microsoft.com/download) - Microsoft Technology
+* [ASP.NET MVC CORE] - Framework
 * [C#] - Programming language used
