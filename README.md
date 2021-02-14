@@ -18,25 +18,28 @@ What things you need to install the software and how to install them
 2. Visual Studio 2019
 (https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
 
-##### Select components to install
-
-<img src="https://user-images.githubusercontent.com/5947398/98497156-34ae6480-227e-11eb-9007-6c769ae658f5.png" width="600" />
+#### Build and Run using Visual Studio 2019
 
 ```
-Build and Run using Visual Studio 2019
-
--> Clone repository using VS, build and run application
+-> Clone repository using VS
+-> Build application
+-> Verify build succeeded
 
 ```
-#### Open Visual Studio and Clone Repository
 
-#### Now, build the solution
+#### Launch Application
 
-##### Verify build succeeded
-
-#### Run Application
+#### Run
 
 <img src="https://user-images.githubusercontent.com/5947398/107878586-b3b2d900-6f0e-11eb-99d1-bb5bae0823aa.png" width="600" />
+
+
+#### View web application
+
+<img src="https://user-images.githubusercontent.com/5947398/107878836-1bb5ef00-6f10-11eb-850e-539f29f28098.png" width="600" />
+
+
+
 
 
 ## Built With
