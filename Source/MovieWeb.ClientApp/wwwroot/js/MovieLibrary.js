@@ -4,29 +4,13 @@
     this.params = iParams;      // Additional parameters to pass to the controller
     this.loading = false;       // true if asynchronous loading is in process
 
-    debugger;
-
     var self = this;
-
-    ShouldReset = function () {
-        if (typeof iParams.resetIndex !== 'undefined' && iParams.resetIndex)
-            return true;
-
-        return false;
-    }
 
     this.AppendMovieToList = function (itemIndex) {
         this.loading = true;
-        // $("#footer").css("display", "block"); // show loading info
 
-        let fullUrl = self.action;
-
-        if (ShouldReset()) {
-            fullUrl = fullUrl + '/?itemindex=' + 0;
-        } else {
-            fullUrl = fullUrl + '/?itemindex=' + itemIndex;
-        }
-
+        let fullUrl = self.action + '/?itemindex=' + itemIndex;
+        
         if (typeof iParams.searchTitle !== 'undefined' && iParams.searchTitle)
             fullUrl = fullUrl + '&title=' + iParams.searchTitle;
 
@@ -38,7 +22,7 @@
             .done(function (result) {
                 if (result) {
 
-                    if (ShouldReset()) {
+                    if (itemIndex === 0) {
                         $("#" + self.listId).html('');
                         $("#" + self.listId).append(result);
                     } else {
@@ -51,9 +35,6 @@
             .fail(function (thrownError) {
                 console.log("Error in AppendMovieToList:", thrownError);
             })
-            .always(function () {
-                // $("#footer").css("display", "none"); // hide loading info
-            });
     }
 
     window.onscroll = function (ev) {
@@ -64,7 +45,7 @@
 
                 console.log(itemIndex);
 
-                self.AppendMovieToList(itemIndex);
+                self.AppendMovieToList(itemIndex, true);
             }
         }
     };

@@ -6,7 +6,6 @@ using MovieWeb.Services;
 using MovieWeb.Services.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MovieWeb.ClientApp.Controllers
@@ -17,7 +16,7 @@ namespace MovieWeb.ClientApp.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IHttpClientFactory httpClientFactory, IMapper mapper, IMovieService movieService, ILogger<HomeController> logger)
+        public HomeController(IMapper mapper, IMovieService movieService, ILogger<HomeController> logger)
         {
             _movieService = movieService;
             _mapper = mapper;
@@ -25,17 +24,11 @@ namespace MovieWeb.ClientApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var movies = await _movieService.GetMovies(title: "", lastItemIndex: 0);
-
-            //convert to viewModel
-
-            var movieViewModels = _mapper.Map<List<MovieModel>, List<MovieViewModel>>(movies);
-
             return View();
         }
-   
+
         [HttpGet]
         public async Task<ActionResult> MovieList([FromQuery] MovieSearchModel movieSearchModel)
         {

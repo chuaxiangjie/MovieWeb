@@ -31,18 +31,14 @@
                 if (e.which !== 32) {
                     var searchTitle = $(this).val();
                     if (searchTitle.length >= 3) {
-                        // Call API
-                        console.log("call api");
-
-                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchTitle: searchTitle, resetIndex: true});
-
+                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { searchTitle: searchTitle});
                     } else if (searchTitle.length == 0) {
-                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchTitle: '', resetIndex: true});
+                        new MovieLibrary('movie-list', '@Url.Action("MovieList")', { searchTitle: ''});
                     }
                 }
             });
 
-        var movieLibrary = new MovieLibrary('movie-list', '@Url.Action("MovieList")', { sortOrder: "ascending", searchString: "3" });
+        var movieLibrary = new MovieLibrary('movie-list', '@Url.Action("MovieList")', { searchTitle: ''});
 
     </script>
 
