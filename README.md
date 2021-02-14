@@ -18,10 +18,18 @@ What things you need to install the software and how to install them
 2. Visual Studio 2019
 (https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
 
+#### Clone repository using VS
+
+#### Verify application Config
+
+Ensure the backend Api Uri path is correct
+
+<img src="https://user-images.githubusercontent.com/5947398/107879028-66843680-6f11-11eb-9739-027fa797daf3.png" width="600" />
+
+
 #### Build and Run using Visual Studio 2019
 
 ```
--> Clone repository using VS
 -> Build application
 -> Verify build succeeded
 
